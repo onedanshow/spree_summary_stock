@@ -3,7 +3,7 @@ SpreeSummaryStock
 
 A Spree extension that summarizes all Spree::StockLocation into one location. This lets Spree receive updates for multiple stock locations, but only generate shipments for one. This is useful if:
 
- 1. Your ERP decides on how shipments are generated anyway.
+ 1. Your ERP or another third-party system decides on how shipments are generated anyway.
  2. You are using another extension like [spree_handling_fee](https://github.com/spree-contrib/spree_handling_fees) that generates order adjustments based on each stock location.
 
 Installation
