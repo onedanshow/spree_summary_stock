@@ -5,10 +5,12 @@ describe Spree::StockItem do
   let(:stock_location_1) { create(:stock_location, default: false, active: false) }
   let(:stock_location_2) { create(:stock_location, default: false, active: false) }
   let(:summary_stock) { create(:stock_location, default: true, active: true) }
-  subject(:stock_item) { stock_location_1.stock_items.order(:id).first }
 
   # DD: product will create stock_items for itself at each stock location
   before { create(:product) }
+
+  subject(:stock_item) { stock_location_1.stock_items.order(:id).first }
+  let(:summary_stock_item) { summary_stock.stock_items.order(:id).first }
 
   context 'when stock location is setup' do
     it { expect(summary_stock.stock_items.count).to be(1) }
@@ -32,7 +34,11 @@ describe Spree::StockItem do
       subject.set_count_on_hand(10)
     end
 
-
+    it 'sets stock item count_on_hand for summary stock warehouse' do
+      expect(summary_stock_item.count_on_hand).to be(0)
+      subject.set_count_on_hand(15)
+      expect(summary_stock_item.reload.count_on_hand).to be(15)
+    end
   end
 
 end
