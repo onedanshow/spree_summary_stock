@@ -5,7 +5,7 @@ Spree::StockItem.class_eval do
   private
 
     def summarize_stock
-      # DD: ignore stock_location of current stock item to prevent ifinite loop
+      # DD: ignore stock_location of current stock item to prevent infinite loop
       virtual_warehouse = Spree::StockLocation.summational.where.not(id:stock_location.try(:id)).first 
 
       if self.variant && virtual_warehouse

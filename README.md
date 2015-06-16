@@ -5,6 +5,7 @@ A Spree extension that summarizes all Spree::StockLocation into one location. Th
 
  1. Your ERP or another third-party system decides on how shipments are generated anyway.
  2. You are using another extension like [spree_handling_fee](https://github.com/spree-contrib/spree_handling_fees) that generates order adjustments based on each stock location.
+ 3. You have a custom checkout page that does not have UI for split shipments.
 
 Installation
 ------------
