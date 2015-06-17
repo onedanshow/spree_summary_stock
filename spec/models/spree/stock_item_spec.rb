@@ -34,11 +34,17 @@ describe Spree::StockItem do
       subject.set_count_on_hand(10)
     end
 
+    it 'is called on adjust_count_on_hand' do
+      expect(subject).to receive(:summarize_stock)
+      subject.adjust_count_on_hand(10)
+    end
+
     it 'sets stock item count_on_hand for summary stock warehouse' do
       expect(summary_stock_item.count_on_hand).to be(0)
       subject.set_count_on_hand(15)
       expect(summary_stock_item.reload.count_on_hand).to be(15)
     end
+
   end
 
 end
