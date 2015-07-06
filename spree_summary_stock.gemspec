@@ -3,8 +3,8 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_summary_stock'
   s.version     = '2.4.2'
-  s.summary     = 'TODO: Add gem summary here'
-  s.description = 'TODO: Add (optional) gem description here'
+  s.summary     = 'A Spree extension that summarizes all Spree::StockLocation into one location.'
+  s.description = 'A Spree extension that summarizes all Spree::StockLocation into one location.'
   s.required_ruby_version = '>= 1.9.3'
 
   s.author    = 'Daniel Dixon'
